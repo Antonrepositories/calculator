@@ -1,38 +1,159 @@
-.App {
-  text-align: center;
+/* Basic reset for the app */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body, html {
+  font-family: Arial, sans-serif;
+  background: #f0f0f5;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Main calculator styling */
+.calculator {
+  max-width: 400px;
+  width: 100%;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+label, select {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.inputs input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.operations {
+  display: flex;
+  justify-content: space-between;
+}
+
+.operations button {
+  flex: 1;
+  padding: 15px;
+  margin: 5px;
+  font-size: 16px;
   color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.operations button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.result {
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+  white-space: pre-wrap; /* Maintain whitespace and allow wrapping */
+  max-width: 100%; /* Ensure result section does not exceed container */
+  text-align: center; /* Center-align text for better aesthetics */
+}
+
+.result p {
+  font-size: 16px;
+}
+
+.history {
+  margin-top: 20px;
+  max-width: 100%; 
+}
+
+.history h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.history ul {
+  list-style: none;
+  max-width: 100%; 
+}
+
+.history li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  word-wrap: break-word; /* Allow long words/numbers to wrap */
+  overflow-wrap: break-word; /* Ensure long content wraps */
+  max-width: 100%; 
+}
+
+.load-history {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  background-color: #28a745;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.load-history:hover {
+  background-color: #218838;
+}
+.toggle-history {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toggle-history:hover {
+  background-color: #0056b3;
+}
+
+.clear-history {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  background-color: #ee0e0e;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.inputs,
+.operations,
+.history {
+  margin: 10px 0;
+  width: 100%; /* Make inputs and history section full width */
 }
