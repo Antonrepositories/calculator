@@ -105,13 +105,13 @@ const Calculator = () => {
 
   const updateChartData = () => {
     if (history.length > 0) {
-      const evenCount = history.filter(entry => entry.resultsInBases.decimal % 2 === 0 && entry.resultsInBases.decimal != "∞" && entry.resultsInBases.decimal != "NaN").length;
-      const oddCount = history.filter(entry => entry.resultsInBases.decimal % 2 != 0 && entry.resultsInBases.decimal != "∞" && entry.resultsInBases.decimal != "NaN").length;
+      const evenCount = history.filter(entry => entry.resultsInBases.decimal % 1 === 0 && entry.resultsInBases.decimal !== "∞" && entry.resultsInBases.decimal !== "NaN").length;
+      const oddCount = history.filter(entry => entry.resultsInBases.decimal % 1 !== 0 && entry.resultsInBases.decimal !== "∞" && entry.resultsInBases.decimal !== "NaN").length;
 
       setChartData([
         ["Result Type", "Count"],
-        ["Even Results", evenCount],
-        ["Odd Results", oddCount],
+        ["Intenger Results", evenCount],
+        ["Double Results", oddCount],
       ]);
     } else {
       setChartData(null); 
@@ -212,15 +212,15 @@ const Calculator = () => {
       {tab === "info" && (
         <div className="program-info">
           <h2>About the Program</h2>
-          <p>This calculator program allows basic arithmetic operations in binary, octal, decimal, and hexadecimal systems.</p>
-          <img src="https://via.placeholder.com/300" alt="Program Description" />
+          <p>This calculator program allows basic arithmetic operations in binary, octal, decimal, and hexadecimal systems. Made by student of TTP-41 group Tikhonov Anton</p>
+          <img src="https://via.placeholder.com/300" alt="Program Description" className="center"/>
         </div>
       )}
 
       {/* Chart Tab */}
       {tab === "chart" && (
         <div className="chart">
-          <h2>Even vs Odd Results</h2>
+          <h2>Intenger vs Double Results</h2>
           <Chart
             chartType="PieChart"
             data={chartData}
